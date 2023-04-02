@@ -5,7 +5,8 @@
 :root {
   --fondo: #f5f5f5;
   --blanco: #fff;
-  --violeta: #8b48bf;
+  --violeta: rgba(139, 72, 191, 1);
+  --violeta-claro: rgba(139, 72, 191, 0.6);
   --celeste: #3cddf3;
   --azul-grisaceo: #1e1e26;
   --azul-oscuro: rgba(36, 46, 82, 1);
@@ -21,7 +22,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Be Vietnam Pro", sans-serif;
-  color: var(--azul-oscuro);
 }
 
 html {
@@ -36,13 +36,27 @@ body {
 
 a {
   text-decoration: none;
-  font-weight: 500;
-  font-size: 13px;
 }
 
-a:visited {
-  color: inherit;
+p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--gris);
 }
+
+h1,
+h2,
+h5 {
+  color: var(--azul-oscuro);
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+/* Algunas clases usadas a lo largo de toda la pagina */
 
 .enlace-estilo-boton {
   background-color: var(--violeta);
@@ -60,17 +74,8 @@ a:visited {
   color: var(--blanco);
 }
 
-p {
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 24px;
-  color: var(--gris);
-}
-
-h5 {
-  font-size: 1rem;
-  color: var(--azul-oscuro);
-  font-weight: 700;
+.enlace-estilo-boton:hover {
+  background-color: var(--violeta-claro);
 }
 
 /* Header */
@@ -91,6 +96,8 @@ header nav ul {
 
 header nav a {
   color: var(--azul-oscuro);
+  font-weight: 500;
+  font-size: 13px;
 }
 header nav a:visited {
   color: var(--azul-oscuro);
@@ -127,25 +134,24 @@ header nav a:hover {
   gap: 30px;
 }
 
-.seccion-banner div:last-child h1,
-.seccion-banner div:last-child p {
+.seccion-banner h1,
+.seccion-banner p {
   text-align: right;
 }
 
-.seccion-banner div:last-child h1 {
+.seccion-banner h1 {
   font-size: 50px;
-  font-weight: 700;
 }
 
-.seccion-banner div:last-child p {
-  font-weight: 500;
+.seccion-banner p {
+  color: var(--azul-oscuro);
 }
 
 .seccion-what-is-different {
   background-color: var(--gris-claro);
 }
 
-.seccion-what-is-different > div:first-child {
+.seccion-what-is-different div:first-child {
   display: flex;
   justify-content: center;
   gap: 100px;
@@ -162,7 +168,6 @@ header nav a:hover {
 
 .seccion-what-is-different div:first-child h2 {
   font-size: 36px;
-  font-weight: 700;
 }
 
 .seccion-what-is-different div:last-child {
@@ -212,10 +217,6 @@ header nav a:hover {
   text-align: left;
 }
 
-.seccion-what-is-different article p {
-  color: var(--gris);
-}
-
 .seccion-best-of-the-month {
   padding: 95px 0px 180px;
   display: flex;
@@ -224,11 +225,7 @@ header nav a:hover {
 }
 
 .seccion-best-of-the-month h2 {
-  text-align: center;
-  margin: auto;
-  color: var(--azul-oscuro);
   font-size: 40px;
-  font-weight: 700;
 }
 
 .seccion-best-of-the-month div {
@@ -241,9 +238,9 @@ header nav a:hover {
   background-color: var(--gris-claro);
   height: 220px;
   position: relative;
+  padding: 50px 20px 20px;
   width: 445px;
   text-align: center;
-  padding: 50px 20px 20px;
 }
 
 .seccion-best-of-the-month article img {
@@ -268,7 +265,7 @@ header nav a:hover {
 .seccion-get-to-know-the-best h2 {
   color: var(--blanco);
   font-size: 40px;
-  font-weight: 700;
+
   max-width: 420px;
 }
 
@@ -290,17 +287,78 @@ footer div:first-child {
   justify-content: space-between;
 }
 
-footer div:first-child div {
+footer div:first-child .branding {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-footer div:first-child div nav ul {
+footer div:first-child nav a {
+  color: var(--blanco);
+  font-size: 1rem;
+}
+
+footer div:first-child nav a:visited {
+  color: var(--blanco);
+}
+
+footer div:first-child nav .redes-sociales {
   display: flex;
+  gap: 13px;
   list-style: none;
 }
 
-footer div:first-child nav ul {
+footer div:first-child nav .redes-sociales a i {
+  width: 20px;
+}
+
+footer div:first-child nav .enlaces-de-interes {
   columns: 2;
+  column-gap: 100px;
   list-style: none;
+}
+
+footer div:first-child nav .enlaces-de-interes li {
+  margin-bottom: 12px;
+}
+
+footer div:first-child nav .enlaces-de-interes li a {
+  font-weight: 400;
+}
+
+footer div:first-child form {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+}
+
+footer div:first-child form input[type="email"],
+footer div:first-child form input[type="submit"] {
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+}
+
+footer div:first-child form input[type="email"] {
+  width: 200px;
+  padding-left: 10px;
+}
+
+footer div:first-child form input[type="email"]::placeholder {
+  font-size: 12.5px;
+}
+
+footer div:first-child form input[type="submit"] {
+  background-color: var(--violeta);
+  color: var(--blanco);
+  cursor: pointer;
+}
+
+footer div:first-child form input[type="submit"]:hover {
+  background-color: var(--violeta-claro);
+}
+
+footer div:last-child p {
+  text-align: right;
+  font-size: 12.5px;
 }
