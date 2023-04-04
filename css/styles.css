@@ -87,8 +87,9 @@ header {
   padding: 65px 160px;
 }
 
+/* Tuve que usar important ya que las clases de font awesome que dan forma al icono sobrescriben algunos valores y al final el icono se muestra igual, cuando quiero que no se muestre */
 header i {
-  display: none;
+  display: none !important;
 }
 
 header nav ul {
@@ -225,6 +226,7 @@ header nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 50px;
 }
 
 .seccion-best-of-the-month h2 {
@@ -234,7 +236,7 @@ header nav a:hover {
 .seccion-best-of-the-month div {
   display: flex;
   justify-content: center;
-  margin-top: 110px;
+  margin-top: 80px;
 }
 
 .seccion-best-of-the-month article {
@@ -366,13 +368,16 @@ footer div:last-child p {
   font-size: 12.5px;
 }
 
+/* Adaptacion a dispotivos mobiles */
+
 @media screen and (max-width: 480px) {
   header {
     padding: 50px;
   }
 
+  /* Las clases mas especificas de font awesome sobrescriben la regla de display block por lo que tuve que usar important */
   header i {
-    display: block;
+    display: block !important;
     font-size: 46px;
   }
 
